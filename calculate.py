@@ -41,7 +41,4 @@ for x1, x2 in zip(x_lims[:-1], x_lims[1:]):
                                           0)
             if (mres[x1:x2,y1:y2] != 0).all():
                     break
-
-from PIL import Image as im
-image = im.fromarray(mres.astype("uint8"))
-image.save("output/image.png")
+np.savetxt("output/mres.txt", mres.astype("int"), fmt="%d")
