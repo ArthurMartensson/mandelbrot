@@ -1,16 +1,16 @@
 import numpy as np
 
-x_res = 7016
-y_res = 4961
-x_min = -2
-x_max = 1
+x_res = 7210
+y_res = 4980
+x_min = -2.25
+x_max = 0.75
 y_min = (x_min - x_max)/2*(y_res / x_res)
 y_max = -y_min
 
 x_coords = np.linspace(x_min, x_max, x_res)
 y_coords = np.linspace(y_min, y_max, y_res)
 
-x_grid, y_grid = np.meshgrid(x_coords, y_coords)
+x_grid, y_grid = np.meshgrid(x_coords, y_coords, indexing="ij")
 
 grid = x_grid + 1j*y_grid
 
